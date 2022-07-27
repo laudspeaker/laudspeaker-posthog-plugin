@@ -1,6 +1,6 @@
 {
-  "name": "rudderstack-posthog-plugin",
-  "version": "0.0.2",
+  "name": "test_ph_integration_two",
+  "version": "0.0.1",
   "description": "export data from posthog",
   "main": "index.js",
   "scripts": {

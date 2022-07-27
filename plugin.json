@@ -1,21 +1,21 @@
 {
-  "name": "RudderStack",
-  "url": "https://github.com/rudderlabs/rudderstack-posthog-plugin",
-  "description": "Send event data to RudderStack",
+  "name": "Laudspeaker",
+  "url": "https://github.com/abheek9/test_ph_integration_two/",
+  "description": "Send event data to Laudspeaker",
   "main": "index.js",
   "config": [
       {
           "key": "dataPlaneUrl",
-          "hint": "Provide RudderStack server url, append v1/batch path",
-          "name": "RudderStack Server URL",
+          "hint": "Provide Laudspeaker server url",
+          "name": "Laudspeaker Server URL",
           "type": "string",
-          "default": "https://hosted.rudderlabs.com/v1/batch",
+          "default": "http://13.40.100.193:3000/events/ffd/sendtolaudspeaker",
           "required": true
       },
       {
           "key": "writeKey",
           "hint": "Provide source writekey",
-          "name": "RudderStack Source Writekey",
+          "name": "Laudspeaker Source Writekey",
           "type": "string",
           "default": "",
           "required": true,

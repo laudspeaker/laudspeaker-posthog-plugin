@@ -211,13 +211,13 @@ function isValidObject(val) {
 }
 
 export const jobs = {
-    uploadBatchToRudder: async (batch, meta) => {
+    uploadBatchToLaud: async (batch, meta) => {
         // We'll retry 15 times using an exponential backoff mechanism
         // The first retry happens in 3s, and the last in about 50min
         if (batch.retriesPerformedSoFar >= 15) {
             return
         }
-        await sendToRudder(batch, meta)
+        await sendToLaud(batch, meta)
     },
 }
 
@@ -237,7 +237,7 @@ export async function setupPlugin({ config, global, jobs }) {
         limit: 5 * 1024 * 1024, // 5mb max
         timeoutSeconds: 60,
         onFlush: async (batch) => {
-            await sendToRudder(
+            await sendToLaud(
                 { batch, retriesPerformedSoFar: 0, batchId: Math.floor(Math.random() * 1000000) }, // This is the first time we're trying to send the payload
                 { global, jobs }
             )
@@ -275,7 +275,7 @@ export async function onEvent(event, { global }) {
     global.buffer.add(rudderPayload, JSON.stringify(rudderPayload).length)
 }
 
-async function sendToRudder(batch, { global, jobs }) {
+async function sendToLaud(batch, { global, jobs }) {
     try {
         const payload = {
             batch: batch.batch,
@@ -296,7 +296,7 @@ async function sendToRudder(batch, { global, jobs }) {
         console.error(`Error uploading payload to Rudderstack: ${err}`)
         console.log(`Enqueued batch ${batch.batchId} for retry in ${Math.round(nextRetryMs / 1000)}s`)
         await jobs
-            .uploadBatchToRudder({
+            .uploadBatchToLaud({
                 ...batch,
                 retriesPerformedSoFar: (batch.retriesPerformedSoFar || 0) + 1,
             })
