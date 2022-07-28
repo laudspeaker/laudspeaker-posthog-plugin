@@ -288,7 +288,7 @@ export async function onEvent(event, { global }) {
     //add if not
     if(!("event" in rudderPayload)){
         if("event" in event){
-            rudderPayload['messageId'] = event["event"]
+            rudderPayload['event'] = event["event"]
         }
         else{
 
