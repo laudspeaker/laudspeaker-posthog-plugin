@@ -107,6 +107,7 @@ function isObject(val) {
     return val !== null && (typeof val === 'object' || typeof val === 'function')
 }
 
+
 // Ref: https://github.com/jonschlinkert/get-value
 function get(target, path, options) {
     if (!isObject(options)) {
@@ -270,6 +271,29 @@ export async function onEvent(event, { global }) {
             set(rudderPayload, `properties.${propKey}`, event.properties[propKey])
         }
     })
+
+    //check if messageId is there or not
+    //add if not
+    if(!("messageId" in rudderPayload)){
+        if("$insert_id" in event.properties){
+            rudderPayload['messageId'] = event.properties["$insert_id"]
+        }
+        else{
+
+        }
+    }
+    
+
+    //check if event name is there or not
+    //add if not
+    if(!("event" in rudderPayload)){
+        if("event" in event){
+            rudderPayload['messageId'] = event["event"]
+        }
+        else{
+
+        }
+    }
 
     // Add event to the buffer which will flush in the background
     global.buffer.add(rudderPayload, JSON.stringify(rudderPayload).length)
