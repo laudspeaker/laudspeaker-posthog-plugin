@@ -223,17 +223,17 @@ export const jobs = {
 }
 
 export async function setupPlugin({ config, global, jobs }) {
-    const rudderBase64AuthToken = Buffer.from(`${config.writeKey}:`).toString('base64')
+    const laudBase64AuthToken = Buffer.from(`${config.writeKey}:`).toString('base64')
 
-    global.rudderAuthHeader = {
+    global.laudAuthHeader = {
         headers: {
-            Authorization: `Basic ${rudderBase64AuthToken}`,
+            Authorization: `Basic ${laudBase64AuthToken}`,
         },
     }
     global.writeKey = config.writeKey
     global.dataPlaneUrl = config.dataPlaneUrl
 
-    // Setup a buffer to group events to be sent to RudderStack in the background at most every 60s
+    // Setup a buffer to group events to be sent to laudspeaker in the background at most every 60s
     global.buffer = createBuffer({
         limit: 5 * 1024 * 1024, // 5mb max
         timeoutSeconds: 60,
@@ -248,47 +248,46 @@ export async function setupPlugin({ config, global, jobs }) {
 
 // onEvent is used to export events without modifying them
 export async function onEvent(event, { global }) {
-    let rudderPayload = {}
+    let laudspeakerPayload = {}
     // add const value props
-    constructPayload(rudderPayload, event, constants, true)
+    constructPayload(laudspeakerPayload, event, constants, true)
 
     // add generic props
-    constructPayload(rudderPayload, event, generic)
+    constructPayload(laudspeakerPayload, event, generic)
 
     // get specific event props
     const eventName = get(event, 'event')
     const { type, mapping } = eventToMapping[eventName] ? eventToMapping[eventName] : eventToMapping['default']
 
-    //set Rudder payload type
-    set(rudderPayload, 'type', type)
+    //set laud payload type
+    set(laudspeakerPayload, 'type', type)
 
-    // set Rudder event props
-    constructPayload(rudderPayload, event, mapping)
+    // set laud event props
+    constructPayload(laudspeakerPayload, event, mapping)
 
-    // add all pther posthog keys under props not starting with $ to Rudder payload properties
+    // add all pther posthog keys under props not starting with $ to laud payload properties
     Object.keys(event.properties).forEach((propKey) => {
         if (propKey.slice(0, 1) != '$' && event.properties[propKey] != undefined && event.properties[propKey] != null) {
-            set(rudderPayload, `properties.${propKey}`, event.properties[propKey])
+            set(laudspeakerPayload, `properties.${propKey}`, event.properties[propKey])
         }
     })
 
-    //check if messageId is there or not
+    //check for messageId 
     //add if not
-    if(!("messageId" in rudderPayload)){
+    if(!("messageId" in laudspeakerPayload)){
         if("$insert_id" in event.properties){
-            rudderPayload['messageId'] = event.properties["$insert_id"]
+            laudspeakerPayload['messageId'] = event.properties["$insert_id"]
         }
         else{
 
         }
     }
     
-
-    //check if event name is there or not
+    //check for event name 
     //add if not
-    if(!("event" in rudderPayload)){
+    if(!("event" in laudspeakerPayload)){
         if("event" in event){
-            rudderPayload['event'] = event["event"]
+            laudspeakerPayload['event'] = event["event"]
         }
         else{
 
@@ -296,7 +295,7 @@ export async function onEvent(event, { global }) {
     }
 
     // Add event to the buffer which will flush in the background
-    global.buffer.add(rudderPayload, JSON.stringify(rudderPayload).length)
+    global.buffer.add(laudspeakerPayload, JSON.stringify(laudspeakerPayload).length)
 }
 
 async function sendToLaud(batch, { global, jobs }) {
@@ -308,16 +307,16 @@ async function sendToLaud(batch, { global, jobs }) {
         await fetch(global.dataPlaneUrl, {
             headers: {
                 'Content-Type': 'application/json',
-                ...global.rudderAuthHeader.headers,
+                ...global.laudAuthHeader.headers,
             },
             body: JSON.stringify(payload),
             method: 'POST',
         })
-        console.log(`Successfully uploaded events batch ${batch.batchId} of size ${batch.batch.length} to RudderStack`)
+        console.log(`Successfully uploaded events batch ${batch.batchId} of size ${batch.batch.length} to laudspeaker`)
     } catch (err) {
         // Retry using exponential backoff based on how many retries were already performed
         const nextRetryMs = 2 ** (batch.retriesPerformedSoFar || 0) * 3000 // 2^0 * 3000 = 3000ms, 2^9 * 3000 = 1,536,000ms
-        console.error(`Error uploading payload to Rudderstack: ${err}`)
+        console.error(`Error uploading payload to laudspeaker: ${err}`)
         console.log(`Enqueued batch ${batch.batchId} for retry in ${Math.round(nextRetryMs / 1000)}s`)
         await jobs
             .uploadBatchToLaud({
@@ -329,8 +328,8 @@ async function sendToLaud(batch, { global, jobs }) {
 }
 
 function constructPayload(outPayload, inPayload, mapping, direct = false) {
-    Object.keys(mapping).forEach((rudderKeyPath) => {
-        let pHKeyPath = mapping[rudderKeyPath]
+    Object.keys(mapping).forEach((laudKeyPath) => {
+        let pHKeyPath = mapping[laudKeyPath]
         let pHKeyVal = undefined
         if (direct) {
             pHKeyVal = pHKeyPath
@@ -345,7 +344,7 @@ function constructPayload(outPayload, inPayload, mapping, direct = false) {
             pHKeyVal = get(inPayload, pHKeyPath)
         }
         if (pHKeyVal != undefined && pHKeyVal != null) {
-            set(outPayload, rudderKeyPath, pHKeyVal)
+            set(outPayload, laudKeyPath, pHKeyVal)
         }
     })
 }
