@@ -9,7 +9,7 @@
           "hint": "Provide Laudspeaker server url",
           "name": "Laudspeaker Server URL",
           "type": "string",
-          "default": "http://13.40.100.193:3000/events/ffd/sendtolaudspeaker",
+          "default": "http://13.40.100.193:3000/events/posthoglaud",
           "required": true
       },
       {
