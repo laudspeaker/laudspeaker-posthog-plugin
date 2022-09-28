@@ -1,4 +1,4 @@
-<p align="center"><a  href="https://rudderstack.com"><img  src="https://user-images.githubusercontent.com/59817155/126267034-ae9870b7-9137-4f45-be65-d621b055a972.png"  alt="RudderStack - Customer Data Platform for Developers"  height="50"/></a></p>
+<p align="center"><a  href="https://laudspeaker.com/"><img  src="https://user-images.githubusercontent.com/59817155/126267034-ae9870b7-9137-4f45-be65-d621b055a972.png"  alt="Laudspeaker - Open Source Customer Messaging Workflows"  height="50"/></a></p>
 
 <h1 align="center"></h1>
 
@@ -8,15 +8,15 @@
 
   
 
-#  RudderStack PostHog Plugin
+#  Laudspeaker PostHog Plugin
 <br>
 
-  | **Send events from your PostHog instance to RudderStack** |
+  | **Send events from PostHog tos Laudspeaker** |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
   
 
-Questions? Please join our [Slack channel](https://resources.rudderstack.com/join-rudderstack-slack) or read about us on [Product Hunt](https://www.producthunt.com/posts/rudderstack).
+Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ssb/redirect) or visit our [site]([https://www.producthunt.com/posts/rudderstack](https://laudspeaker.com/)).
 
 <br>
 
