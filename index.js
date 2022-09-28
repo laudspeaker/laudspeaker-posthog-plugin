@@ -227,7 +227,7 @@ export async function setupPlugin({ config, global, jobs }) {
 
     global.laudAuthHeader = {
         headers: {
-            Authorization: `Basic ${laudBase64AuthToken}`,
+            Authorization: `Api-Key ${config.writeKey}`,
         },
     }
     global.writeKey = config.writeKey
