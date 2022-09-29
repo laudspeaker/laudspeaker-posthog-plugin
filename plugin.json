@@ -20,6 +20,30 @@
           "default": "",
           "required": true,
           "secret": true
+      },
+      {
+          "key": "phEmail",
+          "hint": "Provide attribute name for email",
+          "name": "Email attribute name",
+          "type": "string",
+          "default": "",
+          "required": false
+      },
+      {
+          "key": "phPhoneNumber",
+          "hint": "Provide attribute name for phone number",
+          "name": "phone attribute name",
+          "type": "string",
+          "default": "",
+          "required": false
+      }
+      ,
+      {
+          "key": "phCustom",
+          "hint": "Provide attribute name for your custom field",
+          "type": "string",
+          "default": "",
+          "required": false
       }
   ]
 }
