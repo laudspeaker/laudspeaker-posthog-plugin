@@ -23,6 +23,7 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
   
 ## Get Started
 
+ - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on laudspeakers application 
  -  Create a PostHog source in your [RudderStack dashboard](https://app.rudderstack.com/). Learn more about adding a source in RudderStack [here](https://docs.rudderstack.com/get-started/adding-source-and-destination-rudderstack).
    
  ![PH-init](https://github.com/rudderlabs/rudderstack-posthog-plugin/blob/master/images/PH-init.png)
