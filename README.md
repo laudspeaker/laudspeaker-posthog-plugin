@@ -18,7 +18,7 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
 ### Get Started
 
  - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application] 
- (https://app.rudderstack.com/).
+ (https:/loom.com/).
    
  - After configuring the posthog on our application then install the plugin, and provide your 
  - `write-key`, your `RudderStack server URL` (also called the `Data Plane URL`)
