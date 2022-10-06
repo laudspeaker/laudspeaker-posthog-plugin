@@ -8,12 +8,8 @@
   
 
 #  Laudspeaker PostHog Plugin
-<br>
 
-  | **Send events from PostHog to Laudspeaker** |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-
-  
+## Send events from PostHog to Laudspeaker
 
 Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ssb/redirect) or visit our [site]((https://laudspeaker.com/)).
 
