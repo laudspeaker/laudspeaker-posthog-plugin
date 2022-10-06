@@ -37,6 +37,9 @@ We would love to see you contribute to Laudspeaker. Join our slack to get involv
 
 -  [Twitter][twitter]
 
+[slack]: [https://laudspeakerusers.slack.com/ssb/redirect]
+[twitter]: [https://twitter.com/laudspeaker]
+
 <!--- 
 -  [Laudspeaker Blog][laudspeaker-blog]
 
@@ -53,8 +56,7 @@ We would love to see you contribute to Laudspeaker. Join our slack to get involv
 -  [Product Hunt][producthunt]
 -->
 
-[slack]: [https://laudspeakerusers.slack.com/ssb/redirect]
-[twitter]: [https://twitter.com/laudspeaker]
+
 <!---[devto]: https://dev.to/rudderstack
 [youtube]: https://www.youtube.com/channel/UCgV-B77bV_-LOmKYHw8jvBw
 [laudspeaker-blog]: https://laudspeaker.com/blog/
