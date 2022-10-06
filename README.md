@@ -19,8 +19,8 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
  - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application] 
  (https:/loom.com/).
    
- - After configuring the posthog on our application then install the plugin, and provide your 
- - `write-key`, your `Lauspeaker URL` (also called the `Data Plane URL`)
+ - After configuring posthog on our application, install the plugin, and provide your 
+ - `write-key`, and your `Lauspeaker URL`. The other fields are optional
  - Then enable the plugin and you should start seeing events sent to laudspeaker 
 
 ### License
