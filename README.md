@@ -9,7 +9,7 @@
 
 ## Send events from PostHog to Laudspeaker
 
-Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ssb/redirect) or visit our [site]((https://laudspeaker.com/)).
+Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ssb/redirect) or visit our [site](https://laudspeaker.com/).
 
 <br>
 
@@ -25,7 +25,7 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
 
 ### License
 
-**Laudspeaker PostHog Plugin** is released under the MIT License [mit_license].
+**Laudspeaker PostHog Plugin** is released under the [MIT License] [mit_license].
 
 ### Contribute 
 
