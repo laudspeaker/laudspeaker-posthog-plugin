@@ -22,36 +22,20 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
   
 ## Get Started
 
- - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on laudspeakers application 
- -  Create a PostHog source in your [RudderStack dashboard](https://app.rudderstack.com/). Learn more about adding a source in RudderStack [here](https://docs.rudderstack.com/get-started/adding-source-and-destination-rudderstack).
+ - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application] 
+ (https://app.rudderstack.com/).
    
- ![PH-init](https://github.com/rudderlabs/rudderstack-posthog-plugin/blob/master/images/PH-init.png)
-
- - After adding the source, it should look something like the following:
-
- ![PH-source](https://user-images.githubusercontent.com/59817155/109136455-2416f100-777e-11eb-83db-342bee7f119b.png)
-
- - Get the source `write-key` and your `RudderStack server URL` (also called the `Data Plane URL`).
- - Copy this repo URL.
- - Go to your PostHog dashboard, and add a custom plugin with this URL.
-
-  ![PH-plugin](https://github.com/rudderlabs/rudderstack-posthog-plugin/blob/master/images/Screenshot%202021-02-22%20at%207.49.50%20PM.png)
-  
- - Once added successfully, you will need to configure the RudderStack plugin with the source write key and RudderStack server URL that you copied above. The default RudderStack server URL is configured to https://hosted.rudderlabs.com/v1/batch. Append `v1/batch` to this URL.
-
- ![PH-plugin-config](https://github.com/rudderlabs/rudderstack-posthog-plugin/blob/master/images/Screenshot%202021-02-22%20at%207.50.55%20PM.png)
-
- - Finally, enable this plugin and you should start seeing events sent to your PostHog instance flowing to this RudderStack source.
-
-  For more info on PostHog plugins, check [this](https://posthog.com/docs/plugins/overview).
+ - After configuring the posthog on our application then install the plugin, and provide your 
+ - `write-key`, your `RudderStack server URL` (also called the `Data Plane URL`)
+ - Then enable the plugin and you should start seeing events sent to laudspeaker 
 
 ## License
 
-**RudderStack PostHog Plugin** is released under the [MIT License][mit_license].
+**Laudspeaker PostHog Plugin** is released under the [MIT License][mit_license].
 
 ## Contribute 
 
-We would love to see you contribute to RudderStack. Get more information on how to contribute [here](CONTRIBUTING.md).
+We would love to see you contribute to Laudspeaker. Join our slack to get involved
 
 ## Follow Us
 
