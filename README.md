@@ -2,7 +2,7 @@
 
 <h1 align="center"></h1>
 
-<p align="center"><b>Customer Data Platform for Developers</b></p>
+<p align="center"><b>Open source customer messaging and notification workflow software</b></p>
 
 <br/>
 
@@ -16,7 +16,7 @@
 
   
 
-Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ssb/redirect) or visit our [site]([https://www.producthunt.com/posts/rudderstack](https://laudspeaker.com/)).
+Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ssb/redirect) or visit our [site]((https://laudspeaker.com/)).
 
 <br>
 
