@@ -37,8 +37,8 @@ We would love to see you contribute to Laudspeaker. Join our slack to get involv
 
 -  [Twitter][twitter]
 
-[slack]: [https://laudspeakerusers.slack.com/ssb/redirect]
-[twitter]: [https://twitter.com/laudspeaker]
+[slack]: https://laudspeakerusers.slack.com/ssb/redirect
+[twitter]: https://twitter.com/laudspeaker
 
 <!--- 
 -  [Laudspeaker Blog][laudspeaker-blog]
