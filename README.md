@@ -21,7 +21,7 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
  (https:/loom.com/).
    
  - After configuring the posthog on our application then install the plugin, and provide your 
- - `write-key`, your `RudderStack server URL` (also called the `Data Plane URL`)
+ - `write-key`, your `Lauspeaker URL` (also called the `Data Plane URL`)
  - Then enable the plugin and you should start seeing events sent to laudspeaker 
 
 ### License
