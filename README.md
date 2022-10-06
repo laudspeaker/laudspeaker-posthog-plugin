@@ -1,4 +1,5 @@
-<p align="center"><a  href="https://laudspeaker.com/"><img  src="https://user-images.githubusercontent.com/59817155/126267034-ae9870b7-9137-4f45-be65-d621b055a972.png"  alt="Laudspeaker - Open Source Customer Messaging Workflows"  height="50"/></a></p>
+<p align="center"><a  href="https://laudspeaker.com/"><img  src="https://user-images.githubusercontent.com/7728266/194205893-9575b17b-83af-4f82-b0f7-f20856b1c1e6.png"  alt="Laudspeaker - Open Source Customer Messaging Workflows"  height="50"/></a></p>
+
 
 
 <p align="center"><b>Open source customer messaging and notification workflow software</b></p>
