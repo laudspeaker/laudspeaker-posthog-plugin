@@ -5,7 +5,6 @@
 
 <br/>
 
-
 #  Laudspeaker PostHog Plugin
 
 ## Send events from PostHog to Laudspeaker
