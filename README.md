@@ -5,7 +5,6 @@
 
 <br/>
 
-  
 
 #  Laudspeaker PostHog Plugin
 
@@ -16,7 +15,7 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
 <br>
 
   
-## Get Started
+### Get Started
 
  - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application] 
  (https://app.rudderstack.com/).
@@ -25,15 +24,15 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
  - `write-key`, your `RudderStack server URL` (also called the `Data Plane URL`)
  - Then enable the plugin and you should start seeing events sent to laudspeaker 
 
-## License
+### License
 
 **Laudspeaker PostHog Plugin** is released under the [MIT License][mit_license].
 
-## Contribute 
+### Contribute 
 
 We would love to see you contribute to Laudspeaker. Join our slack to get involved
 
-## Follow Us
+### Follow Us
 
 -  [Slack][slack]
 
