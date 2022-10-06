@@ -25,7 +25,7 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
 
 ### License
 
-**Laudspeaker PostHog Plugin** is released under the [MIT License][mit_license].
+**Laudspeaker PostHog Plugin** is released under the MIT License [mit_license].
 
 ### Contribute 
 
@@ -39,6 +39,7 @@ We would love to see you contribute to Laudspeaker. Join our slack to get involv
 
 [slack]: https://laudspeakerusers.slack.com/ssb/redirect
 [twitter]: https://twitter.com/laudspeaker
+[mit_license]: https://opensource.org/licenses/MIT
 
 <!--- 
 -  [Laudspeaker Blog][laudspeaker-blog]
@@ -64,5 +65,5 @@ We would love to see you contribute to Laudspeaker. Join our slack to get involv
 [producthunt]: https://www.producthunt.com/posts/laudspeaker
 [agplv3_license]: https://www.gnu.org/licenses/agpl-3.0-standalone.html
 [laudspeaker_ee_license]: https://www.mongodb.com/licensing/server-side-public-license
-[mit_license]: https://opensource.org/licenses/MIT
+
 -->
