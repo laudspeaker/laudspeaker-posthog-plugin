@@ -294,7 +294,8 @@ export async function onEvent(event, { config, global }) {
         }
     }
 
-    const res = await posthog.api.get('/api/projects/@current/persons/' + laudspeakerPayload.userId)
+    console.log("request path is " + '/api/projects/@current/persons/' + event.distinct_id );
+    const res = await posthog.api.get('/api/projects/@current/persons/' + event.distinct_id)
     const user = await res.json();
     console.log("User is ", JSON.stringify(user))
     if (!(config.phEmail in laudspeakerPayload) && config.phEmail) {
