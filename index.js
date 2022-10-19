@@ -274,28 +274,28 @@ export async function onEvent(event, { config, global }) {
 
     //check for messageId 
     //add if not
-    if(!("messageId" in laudspeakerPayload)){
-        if("$insert_id" in event.properties){
+    if (!("messageId" in laudspeakerPayload)) {
+        if ("$insert_id" in event.properties) {
             laudspeakerPayload['messageId'] = event.properties["$insert_id"]
         }
-        else{
+        else {
 
         }
     }
-    
+
     //check for event name 
     //add if not
-    if(!("event" in laudspeakerPayload)){
-        if("event" in event){
+    if (!("event" in laudspeakerPayload)) {
+        if ("event" in event) {
             laudspeakerPayload['event'] = event["event"]
         }
-        else{
+        else {
 
         }
     }
 
-    const user = await posthog.api.get('/api/projects/@current/persons/'+laudspeakerPayload.userId)
-
+    const user = await posthog.api.get('/api/projects/@current/persons/' + laudspeakerPayload.userId)
+    console.log("User is ", user)
     if (!(config.phEmail in laudspeakerPayload) && config.phEmail) {
         laudspeakerPayload.phEmail = user[config.phEmail];
     }
