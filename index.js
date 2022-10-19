@@ -247,7 +247,7 @@ export async function setupPlugin({ config, global, jobs }) {
 }
 
 // onEvent is used to export events without modifying them
-export async function onEvent(event, { global }) {
+export async function onEvent(event, { config, global }) {
     let laudspeakerPayload = {}
     // add const value props
     constructPayload(laudspeakerPayload, event, constants, true)
@@ -293,7 +293,7 @@ export async function onEvent(event, { global }) {
 
         }
     }
-    
+
     const user = await posthog.api.get('/api/projects/@current/persons/'+laudspeakerPayload.userId)
 
     if (!(config.phEmail in laudspeakerPayload) && config.phEmail) {
