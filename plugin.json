@@ -6,16 +6,16 @@
   "config": [
       {
           "key": "dataPlaneUrl",
-          "hint": "Provide Laudspeaker server url",
-          "name": "Laudspeaker Server URL",
+          "hint": "Provide Laudspeaker API URL.",
+          "name": "Laudspeaker API URL",
           "type": "string",
-          "default": "http://13.40.100.193:3000/events/posthoglaud",
+          "default": "https://api.laudspeaker.com/events/posthog",
           "required": true
       },
       {
           "key": "writeKey",
-          "hint": "Provide source writekey",
-          "name": "Laudspeaker Source Writekey",
+          "hint": "Provide API key for your Laudspeaker account found on the settings page.",
+          "name": "Laudspeaker API Key",
           "type": "string",
           "default": "",
           "required": true,
@@ -23,7 +23,7 @@
       },
       {
           "key": "phEmail",
-          "hint": "Provide attribute name for email",
+          "hint": "Provide attribute name for email.",
           "name": "Email attribute name",
           "type": "string",
           "default": "",
@@ -31,8 +31,8 @@
       },
       {
           "key": "phPhoneNumber",
-          "hint": "Provide attribute name for phone number",
-          "name": "phone attribute name",
+          "hint": "Provide attribute name for phone number.",
+          "name": "Phone number attribute name",
           "type": "string",
           "default": "",
           "required": false
@@ -40,7 +40,7 @@
       ,
       {
           "key": "phCustom",
-          "hint": "Provide attribute name for your custom field",
+          "hint": "Provide attribute name for your custom field.",
           "type": "string",
           "default": "",
           "required": false

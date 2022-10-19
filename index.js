@@ -293,6 +293,20 @@ export async function onEvent(event, { global }) {
 
         }
     }
+    
+    const user = await posthog.api.get('/api/projects/@current/persons/'+laudspeakerPayload.userId)
+
+    if (!(config.phEmail in laudspeakerPayload) && config.phEmail) {
+        laudspeakerPayload.phEmail = user[config.phEmail];
+    }
+
+    if (!(config.phPhoneNumber in laudspeakerPayload) && config.phPhoneNumber) {
+        laudspeakerPayload.phPhoneNumber = user[config.phPhoneNumber];
+    }
+
+    if (!(config.phCustom in laudspeakerPayload) && config.phCustom) {
+        laudspeakerPayload.phCustom = user[config.phCustom];
+    }
 
     // Add event to the buffer which will flush in the background
     global.buffer.add(laudspeakerPayload, JSON.stringify(laudspeakerPayload).length)
