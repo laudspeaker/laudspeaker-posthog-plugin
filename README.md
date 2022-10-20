@@ -25,10 +25,9 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
 
  <img width="1514" alt="Screen Shot 2022-10-20 at 12 42 58 PM" src="https://user-images.githubusercontent.com/7728266/196939484-6961d8af-b198-4694-9770-26f0584601ef.png">
  
- - provide [your_server's_url]/events/posthog for `Lauspeaker URL` (or if using our hosted plan just use app.laudspeaker.com/events/posthog). The other fields are optional
+ - provide `[your_server's_url]/events/posthog` for `Lauspeaker URL` (or if using our hosted plan just use `app.laudspeaker.com/events/posthog`). The other fields are optional
  - Then enable the plugin and you should start seeing events sent to laudspeaker. 
  
-
 
 
 ### License
