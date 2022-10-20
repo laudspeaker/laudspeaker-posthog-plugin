@@ -17,13 +17,18 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
 ### Get Started
 
  - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application] 
- (https:/loom.com/).
-   
- - After configuring posthog on our application, install the plugin, and provide your api for `write-key`, 
- - provide [your_server's_url]/events/posthog for `Lauspeaker URL` (or if using our hosted plan just use app.laudspeaker.com/events/posthog). The other fields are optional
- - Then enable the plugin and you should start seeing events sent to laudspeaker. To enable you will need your laudspeaker api key which you can find in settings:
+ <!--- (https:/loom.com/). -->
  
+ <img width="1242" alt="Screen Shot 2022-10-20 at 12 46 10 PM" src="https://user-images.githubusercontent.com/7728266/196940398-34bb1f95-724f-4e6c-a37d-e01fcae2b240.png">
+   
+ - After configuring posthog on our application, install the plugin, and provide your api for `write-key`, which you can find in settings:
+
  <img width="1514" alt="Screen Shot 2022-10-20 at 12 42 58 PM" src="https://user-images.githubusercontent.com/7728266/196939484-6961d8af-b198-4694-9770-26f0584601ef.png">
+ 
+ - provide [your_server's_url]/events/posthog for `Lauspeaker URL` (or if using our hosted plan just use app.laudspeaker.com/events/posthog). The other fields are optional
+ - Then enable the plugin and you should start seeing events sent to laudspeaker. 
+ 
+
 
 
 ### License
