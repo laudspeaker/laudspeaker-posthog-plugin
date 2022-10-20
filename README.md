@@ -28,6 +28,8 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
  - provide `[your_server's_url]/events/posthog` for `Lauspeaker URL` (or if using our hosted plan just use `app.laudspeaker.com/events/posthog`). The other fields are optional
  - Then enable the plugin and you should start seeing events sent to laudspeaker. 
  
+ - For a full tutorial on using laudspeaker with posthog check out our documentation. Where we go through an example!
+ 
 
 
 ### License
