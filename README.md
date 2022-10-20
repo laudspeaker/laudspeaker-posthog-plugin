@@ -16,7 +16,7 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
   
 ### Get Started
 
- - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application] 
+ - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application](https://app.laudspeaker.com) 
  <!--- (https:/loom.com/). -->
  
  <img width="1242" alt="Screen Shot 2022-10-20 at 12 46 10 PM" src="https://user-images.githubusercontent.com/7728266/196940398-34bb1f95-724f-4e6c-a37d-e01fcae2b240.png">
