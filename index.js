@@ -294,20 +294,18 @@ export async function onEvent(event, { config, global }) {
         }
     }
 
-    console.log("request path is " + '/api/projects/@current/persons/' + event.distinct_id );
-    const res = await posthog.api.get('/api/projects/@current/persons/' + event.distinct_id)
-    const user = await res.json();
-    console.log("User is ", JSON.stringify(user))
-    if (!(config.phEmail in laudspeakerPayload) && config.phEmail) {
-        laudspeakerPayload.phEmail = user[config.phEmail];
-    }
+    const userSet = get(event, 'properties.$set')
 
-    if (!(config.phPhoneNumber in laudspeakerPayload) && config.phPhoneNumber) {
-        laudspeakerPayload.phPhoneNumber = user[config.phPhoneNumber];
-    }
-
-    if (!(config.phCustom in laudspeakerPayload) && config.phCustom) {
-        laudspeakerPayload.phCustom = user[config.phCustom];
+    if (userSet) {
+        if (config.phEmail) {
+            set(laudspeakerPayload, 'phEmail', userSet[config.phEmail])
+        }
+        if (config.phPhoneNumber) {
+            set(laudspeakerPayload, 'phPhoneNumber', userSet[config.phPhoneNumber])
+        }
+        if (config.phCustom) {
+            set(laudspeakerPayload, 'phCustom', userSet[config.phCustom])
+        }
     }
 
     // Add event to the buffer which will flush in the background
