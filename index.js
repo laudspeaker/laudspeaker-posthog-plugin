@@ -278,9 +278,9 @@ export async function onEvent(event, { config, global }) {
         if ("$insert_id" in event.properties) {
             laudspeakerPayload['messageId'] = event.properties["$insert_id"]
         }
-        else {
+        //else {
 
-        }
+        //}
     }
 
     //check for event name 
@@ -289,9 +289,9 @@ export async function onEvent(event, { config, global }) {
         if ("event" in event) {
             laudspeakerPayload['event'] = event["event"]
         }
-        else {
+        //else {
 
-        }
+        //}
     }
 
     const userSet = get(event, 'properties.$set')
