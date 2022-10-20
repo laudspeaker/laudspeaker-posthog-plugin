@@ -7,6 +7,12 @@
 
 #  Laudspeaker PostHog Plugin
 
+## Why use Posthog and Laudspeaker?
+
+Laudspeaker is an open source omnichannel customer messaging SaaS. It is an alternative to Braze, Iterable, customer io and many many other options. Its designed to be developer friendly and easy to use. And you can use our journey tool to easily create event-triggered, or time triggered user notifications. 
+
+Posthog is open source product analytics so we can go hand in hand! We believe we are the easiest tool to use with posthog to set things up like automated  onboarding emails. If a user completes an action in posthog, have an automated message reach them when, and how you want!
+
 ## Send events from PostHog to Laudspeaker
 
 Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ssb/redirect) or visit our [site](https://laudspeaker.com/).
