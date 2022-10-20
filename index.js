@@ -236,7 +236,7 @@ export async function setupPlugin({ config, global, jobs }) {
     // Setup a buffer to group events to be sent to laudspeaker in the background at most every 60s
     global.buffer = createBuffer({
         limit: 5 * 1024 * 1024, // 5mb max
-        timeoutSeconds: 60,
+        timeoutSeconds: 10,
         onFlush: async (batch) => {
             await sendToLaud(
                 { batch, retriesPerformedSoFar: 0, batchId: Math.floor(Math.random() * 1000000) }, // This is the first time we're trying to send the payload
