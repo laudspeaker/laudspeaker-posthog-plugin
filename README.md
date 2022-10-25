@@ -7,11 +7,11 @@
 
 #  Laudspeaker PostHog Plugin
 
-## Why use Posthog and Laudspeaker?
+## Why use PostHog and Laudspeaker?
 
 Laudspeaker is an open source omnichannel customer messaging SaaS. It is an alternative to Braze, Iterable, customer io and many many other options. Its designed to be developer friendly and easy to use. And you can use our journey tool to easily create event-triggered, or time triggered user notifications. 
 
-Posthog is open source product analytics so we can go hand in hand! We believe we are the easiest tool to use with posthog to set things up like automated  onboarding emails. If a user completes an action in posthog, have an automated message reach them when, where and how you want!
+PostHog is open source product analytics so we can go hand in hand! We believe we are the easiest tool to use with PostHog to set things up like automated  onboarding emails. If a user completes an action in PostHog, have an automated message reach them when, where and how you want!
 
 ## Send events from PostHog to Laudspeaker
 
@@ -22,19 +22,19 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
   
 ### Get Started
 
- - To experience the full power of laudspeaker we recommend you import your posthog users first via the event integration on [laudspeakers application](https://app.laudspeaker.com) 
+ - To experience the full power of laudspeaker we recommend you import your PostHog users first via the event integration on [laudspeakers application](https://app.laudspeaker.com) 
  <!--- (https:/loom.com/). -->
  
  <img width="1242" alt="Screen Shot 2022-10-20 at 12 46 10 PM" src="https://user-images.githubusercontent.com/7728266/196940398-34bb1f95-724f-4e6c-a37d-e01fcae2b240.png">
    
- - After configuring posthog on our application, install the plugin, and provide your api for `write-key`, which you can find in settings:
+ - After configuring PostHog on our application, install the plugin, and provide your api for `write-key`, which you can find in settings:
 
  <img width="1514" alt="Screen Shot 2022-10-20 at 12 42 58 PM" src="https://user-images.githubusercontent.com/7728266/196939484-6961d8af-b198-4694-9770-26f0584601ef.png">
  
  - provide `[your_server's_url]/events/posthog` for `Lauspeaker URL` (or if using our hosted plan just use `app.laudspeaker.com/events/posthog`). The other fields are optional
  - Then enable the plugin and you should start seeing events sent to laudspeaker. 
  
- - For a full tutorial on using laudspeaker with posthog check out our documentation. Where we go through an example!
+ - For a full tutorial on using laudspeaker with PostHog check out our documentation. Where we go through an example!
  
 
 
