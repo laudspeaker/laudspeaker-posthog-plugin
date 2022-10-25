@@ -37,9 +37,9 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
  
  - For a full tutorial on using laudspeaker with PostHog check out our documentation. Where we go through an example!
  
-#### Video Walkthrough
+### Video Walkthrough
 
-[video](https://vimeo.com/763728112)
+Check out how to set up and trigger an email in our [video](https://vimeo.com/763728112)
 
 
 ### License
