@@ -31,10 +31,15 @@ Questions? Please join our [Slack channel](https://laudspeakerusers.slack.com/ss
 
  <img width="1514" alt="Screen Shot 2022-10-20 at 12 42 58 PM" src="https://user-images.githubusercontent.com/7728266/196939484-6961d8af-b198-4694-9770-26f0584601ef.png">
  
- - provide `[your_server's_url]/events/posthog` for `Lauspeaker URL` (or if using our hosted plan just use `app.laudspeaker.com/events/posthog`). The other fields are optional
+ - provide `[your_server's_url]/events/posthog` for `Lauspeaker URL` (or if using our hosted plan just use `app.laudspeaker.com/events/posthog`). The other fields (email, phone number, custom) are optional and can be specified if you want to be able to message people from posthog through those channels with laudspeaker 
+ 
  - Then enable the plugin and you should start seeing events sent to laudspeaker. 
  
  - For a full tutorial on using laudspeaker with PostHog check out our documentation. Where we go through an example!
+ 
+#### Video Walkthrough
+
+<div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/763728112?h=f979f5e78c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Laudspeaker Set Up + PostHog.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
  
 
 
