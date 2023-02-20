@@ -300,9 +300,15 @@ export async function onEvent(event, { config, global }) {
         if (config.phEmail) {
             set(laudspeakerPayload, 'phEmail', userSet[config.phEmail])
         }
+        
         if (config.phPhoneNumber) {
             set(laudspeakerPayload, 'phPhoneNumber', userSet[config.phPhoneNumber])
         }
+
+        if (config.phDeviceToken) {
+            set(laudspeakerPayload, 'phDeviceToken', userSet[config.phDeviceToken])
+        }
+
         if (config.phCustom) {
             set(laudspeakerPayload, 'phCustom', userSet[config.phCustom])
         }
