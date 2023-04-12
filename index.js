@@ -337,7 +337,7 @@ async function sendToLaud(batch, { global, jobs }) {
         // Retry using exponential backoff based on how many retries were already performed
         const nextRetryMs = 2 ** (batch.retriesPerformedSoFar || 0) * 3000 // 2^0 * 3000 = 3000ms, 2^9 * 3000 = 1,536,000ms
         console.error(`Error uploading payload to laudspeaker: ${err}`)
-        console.log(`Enqueued batch ${batch.batchId} for retry in ${Math.round(nextRetryMs / 1000)}s`)
+        console.log(`Enqueued batch ${batch.batchId} of size ${batch.batch.length} for retry in ${Math.round(nextRetryMs / 1000)}s`)
         await jobs
             .uploadBatchToLaud({
                 ...batch,
