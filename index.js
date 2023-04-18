@@ -332,6 +332,7 @@ async function sendToLaud(batch, { global, jobs }) {
         },
         body: JSON.stringify(payload),
         method: 'POST',
+        timeout: 15000, // 15 seconds
     }).then(
         (res) => {
             if (res.ok) {
