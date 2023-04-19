@@ -319,32 +319,53 @@ export async function onEvent(event, { config, global }) {
 }
 
 async function sendToLaud(batch, { global, jobs }) {
-    try {
-        const payload = {
-            batch: batch.batch,
-            sentAt: new Date().toISOString(),
-        }
-        await fetch(global.dataPlaneUrl, {
-            headers: {
-                'Content-Type': 'application/json',
-                ...global.laudAuthHeader.headers,
-            },
-            body: JSON.stringify(payload),
-            method: 'POST',
-        })
-        console.log(`Successfully uploaded events batch ${batch.batchId} of size ${batch.batch.length} to laudspeaker`)
-    } catch (err) {
-        // Retry using exponential backoff based on how many retries were already performed
-        const nextRetryMs = 2 ** (batch.retriesPerformedSoFar || 0) * 3000 // 2^0 * 3000 = 3000ms, 2^9 * 3000 = 1,536,000ms
-        console.error(`Error uploading payload to laudspeaker: ${err}`)
-        console.log(`Enqueued batch ${batch.batchId} of size ${batch.batch.length} for retry in ${Math.round(nextRetryMs / 1000)}s`)
-        await jobs
-            .uploadBatchToLaud({
-                ...batch,
-                retriesPerformedSoFar: (batch.retriesPerformedSoFar || 0) + 1,
-            })
-            .runIn(nextRetryMs, 'milliseconds')
+    const payload = {
+        batch: batch.batch,
+        sentAt: new Date().toISOString(),
     }
+    const batchDescription = `${batch.batch.length} event${batch.batch.length > 1 ? 's' : ''}`
+
+    await fetch(global.dataPlaneUrl, {
+        headers: {
+            'Content-Type': 'application/json',
+            ...global.laudAuthHeader.headers,
+        },
+        body: JSON.stringify(payload),
+        method: 'POST',
+        timeout: 15000, // 15 seconds
+    }).then(
+        (res) => {
+            if (res.ok) {
+                console.log(`Flushed ${batchDescription} to ${global.dataPlaneUrl}`)
+            } else if (res.status >= 500) {
+                // Server error, retry the batch later
+                console.error(
+                    `Failed to submit ${batchDescription} to ${global.dataPlaneUrl} due to server error: ${res.status} ${res.statusText}`,
+                )
+                throw new RetryError(`Server error: ${res.status} ${res.statusText}`)
+            } else {
+                // node-fetch handles 300s internaly, so we're left with 400s here: skip the batch and move forward
+                // We might have old events in ClickHouse that don't pass new stricter checks, don't fail the whole export if that happens
+                console.warn(
+                    `Skipping ${batchDescription}, rejected by ${global.dataPlaneUrl}: ${res.status} ${res.statusText}`,
+                )
+            }
+        },
+        (err) => {
+            if (err.name === 'AbortError' || err.name === 'FetchError') {
+                // Network / timeout error, retry the batch later
+                // See https://github.com/node-fetch/node-fetch/blob/2.x/ERROR-HANDLING.md
+                console.error(
+                    `Failed to submit ${batchDescription} to ${global.dataPlaneUrl} due to network error`,
+                    err,
+                )
+                throw new RetryError(`Target is unreachable: ${(err as Error).message}`)
+            }
+            // Other errors are rethrown to stop the export
+            console.error(`Failed to submit ${batchDescription} to ${global.dataPlaneUrl} due to unexpected error`, err)
+            throw err
+        },
+    )
 }
 
 function constructPayload(outPayload, inPayload, mapping, direct = false) {
