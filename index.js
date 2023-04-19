@@ -336,18 +336,18 @@ async function sendToLaud(batch, { global, jobs }) {
     }).then(
         (res) => {
             if (res.ok) {
-                console.log(`Flushed ${batchDescription} to ${config.host}`)
+                console.log(`Flushed ${batchDescription} to ${global.dataPlaneUrl}`)
             } else if (res.status >= 500) {
                 // Server error, retry the batch later
                 console.error(
-                    `Failed to submit ${batchDescription} to ${config.host} due to server error: ${res.status} ${res.statusText}`,
+                    `Failed to submit ${batchDescription} to ${global.dataPlaneUrl} due to server error: ${res.status} ${res.statusText}`,
                 )
                 throw new RetryError(`Server error: ${res.status} ${res.statusText}`)
             } else {
                 // node-fetch handles 300s internaly, so we're left with 400s here: skip the batch and move forward
                 // We might have old events in ClickHouse that don't pass new stricter checks, don't fail the whole export if that happens
                 console.warn(
-                    `Skipping ${batchDescription}, rejected by ${config.host}: ${res.status} ${res.statusText}`,
+                    `Skipping ${batchDescription}, rejected by ${global.dataPlaneUrl}: ${res.status} ${res.statusText}`,
                 )
             }
         },
@@ -356,13 +356,13 @@ async function sendToLaud(batch, { global, jobs }) {
                 // Network / timeout error, retry the batch later
                 // See https://github.com/node-fetch/node-fetch/blob/2.x/ERROR-HANDLING.md
                 console.error(
-                    `Failed to submit ${batchDescription} to ${config.host} due to network error`,
+                    `Failed to submit ${batchDescription} to ${global.dataPlaneUrl} due to network error`,
                     err,
                 )
                 throw new RetryError(`Target is unreachable: ${(err as Error).message}`)
             }
             // Other errors are rethrown to stop the export
-            console.error(`Failed to submit ${batchDescription} to ${config.host} due to unexpected error`, err)
+            console.error(`Failed to submit ${batchDescription} to ${global.dataPlaneUrl} due to unexpected error`, err)
             throw err
         },
     )
