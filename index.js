@@ -323,7 +323,7 @@ async function sendToLaud(batch, { global, jobs }) {
         batch: batch.batch,
         sentAt: new Date().toISOString(),
     }
-    const batchDescription = `${batch.length} event${batch.length > 1 ? 's' : ''}`
+    const batchDescription = `${batch.batch.length} event${batch.batch.length > 1 ? 's' : ''}`
 
     await fetch(global.dataPlaneUrl, {
         headers: {
