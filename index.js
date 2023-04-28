@@ -248,6 +248,9 @@ export async function setupPlugin({ config, global, jobs }) {
 
 function getElementByOrderZero(json) {
   //console.log("here ok");
+  if (!json.elements || !Array.isArray(json.elements)) {
+    return null; // or whatever default value you'd like to return
+  }
   const elements = json.elements;
   for (let i = 0; i < elements.length; i++) {
     if (elements[i].order === 0) {
