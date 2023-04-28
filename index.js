@@ -246,6 +246,15 @@ export async function setupPlugin({ config, global, jobs }) {
     })
 }
 
+function getElementByOrderZero(json) {
+  //console.log("here ok");
+  const elements = json.elements;
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i].order === 0) {
+      return elements[i];
+    }
+  }
+
 // onEvent is used to export events without modifying them
 export async function onEvent(event, { config, global }) {
     let laudspeakerPayload = {}
@@ -292,6 +301,14 @@ export async function onEvent(event, { config, global }) {
         //else {
 
         //}
+    }
+    
+    // add top level element if there is a click, change, or submit
+    if (("event" in laudspeakerPayload)) {
+        if (laudspeakerPayload['event'] === 'click' || 'change' || 'submit') {
+          laudspeakerPayload['context']['elements']= [getElementByOrderZero(event)];
+           //laudspeakerPayload['element_0'] = getElementByOrderZero(event)
+        }
     }
 
     const userSet = get(event, 'properties.$set')
