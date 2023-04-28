@@ -308,7 +308,7 @@ export async function onEvent(event, { config, global }) {
     
     // add top level element if there is a click, change, or submit
     if (("event" in laudspeakerPayload)) {
-        if (laudspeakerPayload['event'] === 'click' || 'change' || 'submit') {
+        if (laudspeakerPayload['event'] === 'click' || laudspeakerPayload['event'] === 'change' || laudspeakerPayload['event'] === 'submit') {
           laudspeakerPayload['context']['elements']= [getElementByOrderZero(event)];
            //laudspeakerPayload['element_0'] = getElementByOrderZero(event)
         }
