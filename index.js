@@ -252,6 +252,10 @@ function getElementByOrderZero(json) {
     return null; // or whatever default value you'd like to return
   }
   const elements = json.elements;
+    
+  if (elements.length < 1){
+    return null;
+  }
   for (let i = 0; i < elements.length; i++) {
     if (elements[i].order === 0) {
       return elements[i];
@@ -309,7 +313,7 @@ export async function onEvent(event, { config, global }) {
     // add top level element if there is a click, change, or submit
     if (("event" in laudspeakerPayload)) {
         if (laudspeakerPayload['event'] === 'click' || laudspeakerPayload['event'] === 'change' || laudspeakerPayload['event'] === 'submit') {
-          laudspeakerPayload['context']['elements']= [getElementByOrderZero(event)];
+          laudspeakerPayload['context']['elements'] = [getElementByOrderZero(event)];
            //laudspeakerPayload['element_0'] = getElementByOrderZero(event)
         }
     }
