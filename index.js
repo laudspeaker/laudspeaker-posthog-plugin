@@ -251,16 +251,7 @@ function getElementByOrderZero(json) {
   if (!json.elements || !Array.isArray(json.elements)) {
     return null; // or whatever default value you'd like to return
   }
-  const elements = json.elements;
-    
-  if (elements.length < 1){
-    return null;
-  }
-  for (let i = 0; i < elements.length; i++) {
-    if (elements[i].order === 0) {
-      return elements[i];
-    }
-  }
+  return json.elements.find(x => x.order === 0) || null
 
 // onEvent is used to export events without modifying them
 export async function onEvent(event, { config, global }) {
